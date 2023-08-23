@@ -16,20 +16,15 @@ import javax.validation.constraints.NotNull
      @Get("/greeting")
      fun greeting(): HttpResponse<String> {
          return HttpResponse.ok("Hello World!")
-         return HttpResponse.ok("")
      }
 
      @Post("/add", produces = [MediaType.APPLICATION_JSON])
      fun add(@Body @NotNull numbers: Numbers): HttpResponse<String> {
          return HttpResponse.ok("""{"result": ${numbers.first + numbers.second} }""")
-     fun add(): HttpResponse<String> {
-         return HttpResponse.ok("")
      }
 
      @Post("/subtract", produces = [MediaType.APPLICATION_JSON])
      fun subtract(@Body @NotNull numbers: Numbers): HttpResponse<String> {
          return HttpResponse.ok("""{"result": ${numbers.first - numbers.second} }""")
-     fun subtract(): HttpResponse<String> {
-         return HttpResponse.ok("")
      }
  }
